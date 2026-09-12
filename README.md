@@ -1,30 +1,31 @@
 # Windows Security Audit PowerShell Module
 
-**Al Shad Real Estate - laboratory case study **
+**Al Shad Real Estate | Client Security Assessment | 2-day project**
 
-> A read-only Windows endpoint security audit toolkit built with native PowerShell 5.1. It collects security evidence, identifies configuration gaps, and produces reproducible audit outputs for security assurance workflows.
+> A read-only Windows endpoint security assessment toolkit built with native PowerShell 5.1. The project automates evidence collection, configuration review, security control checks and risk-based reporting for a small-business Windows environment.
 
+## Recruiter view
 
 **50 security checks | 10 PowerShell modules | Windows 10 22H2 x64 | PowerShell 5.1**
 
-**Covers:** RBAC and local accounts, Security Event Logs, Windows Firewall, network exposure, services, BitLocker, UAC, SMB, audit policy and evidence collection.
+**Core areas:** RBAC and local accounts, Security Event Logs, Windows Firewall, network exposure, services, BitLocker, UAC, SMB, Windows audit policy and evidence collection.
 
-**Outputs:** CSV + JSON + HTML audit report.
+**Reporting:** CSV + JSON + HTML audit outputs, supported by a professional assessment report.
 
-**Approach:** evidence first, read-only collection, reproducible execution, ISO/IEC 27001:2022-aligned evidence themes. This is a laboratory demonstration, not an ISO certification or conformity assessment.
+**Method:** evidence-first assessment, read-only collection, repeatable execution and ISO/IEC 27001:2022-aligned evidence mapping.
 
-## Key findings from the assessed lab endpoint
+## Assessment outcome
 
-The recorded assessment identified these areas for review:
+The assessment identified configuration and assurance areas requiring review, including:
 
 - Built-in Administrator account enabled.
 - Two members in the local Administrators group.
 - Windows Firewall profiles reported disabled.
-- System volume reported fully decrypted / BitLocker protection off.
+- System volume reported fully decrypted with BitLocker protection off.
 - SMBv1 reported enabled.
 - SMB client settings reported insecure guest logons enabled and signing not required.
 - Multiple Windows audit subcategories reported as `No Auditing`.
-- Endpoint protection checks had collection limitations in the audit session; these are reported as evidence limitations rather than fabricated security failures.
+- Endpoint-protection checks included session-specific collection limitations, which are recorded separately from confirmed security findings.
 
 ## Architecture
 
@@ -68,17 +69,17 @@ Set-Location .
 .\Scripts\Invoke-WindowsSecurityAudit.ps1
 ```
 
-The validator must report:
+The validator should report:
 
 ```text
 TOTAL EXPORTED AUDIT FUNCTIONS: 50 [OK]
 ```
 
-Each audit run creates timestamped output under `Reports\<timestamp>\`.
+Each assessment execution creates timestamped output under `Reports\\<timestamp>\\`.
 
 ## Evidence screenshots
 
-The repository contains a compact evidence set from the Windows 10 laboratory run. Machine-specific identifiers have been redacted from the public copies.
+The repository contains a focused evidence set showing environment validation, framework verification, access review, Windows Security event collection, endpoint controls, audit execution and the resulting findings.
 
 | Evidence | File |
 |---|---|
@@ -93,31 +94,42 @@ The repository contains a compact evidence set from the Windows 10 laboratory ru
 | HTML audit output | `Screenshots/09-html-audit-report.png` |
 | Findings / remediation view | `Screenshots/10-audit-findings.png` |
 
-## Report
+## Assessment report
 
-See `Docs/security-audit-report.pdf` for the recruiter-ready assessment summary, methodology, verified environment, key findings and remediation recommendations.
+See `Docs/security-audit-report.pdf` for the assessment summary, objectives, scope, methodology, verification evidence, findings, remediation recommendations and reporting outputs.
 
-## Scope and limitations
+## Scope and methodology
 
-- Fictional company and laboratory endpoint.
-- Native Windows PowerShell and Windows security interfaces only.
-- No destructive actions, exploitation or password changes.
-- Some security interfaces are edition-dependent; unavailable telemetry is recorded as a collection limitation.
-- ISO/IEC 27001:2022 references are evidence-mapping themes only; they do not establish organisational compliance.
+- Assessment scope: one Windows 10 endpoint within the client environment.
+- Native Windows PowerShell 5.1 and Windows security interfaces were used.
+- Assessment actions were read-only; no exploitation, password changes or destructive configuration changes were performed.
+- Security observations are based on collected endpoint evidence from the assessment run.
+- ISO/IEC 27001:2022 references are used for control and evidence mapping; this project does not represent an ISO certification or formal organisational conformity assessment.
+
+## Reporting outputs
+
+```text
+Reports/
+    audit_report.csv
+    audit_report.json
+    summary.json
+    manifest.json
+    audit_report.html
+```
+
+The repository separates source code, generated assessment output and supporting evidence so the project remains reproducible and easy to review.
 
 ## Project structure
 
 ```text
 Modules/       10 modular audit components
 Scripts/       Preflight, validator and audit runner
-Docs/          Architecture, mapping, interview notes and report
+Docs/          Architecture, control mapping, interview notes and report
 Screenshots/   Recruiter-facing evidence
-Reports/       Runtime output generated locally; not required in source control
-Evidence/      Local evidence generated during execution
+Reports/       Generated assessment outputs
+Evidence/      Supporting audit evidence
 ```
 
-## CV entry
+## Professional use
 
-> **Windows Security Audit PowerShell Module | PowerShell, Windows Security, RBAC, Event Log Analysis, ISO/IEC 27001:2022-aligned Evidence Mapping**  
-> **Al Shad Real Estate - Fictional Lab Case Study | 2-day project**  
-> Developed and validated a modular 50-function, 10-module PowerShell toolkit to assess Windows endpoint security across privileged access, Security event logs, firewall configuration, network exposure, services, BitLocker and endpoint hardening. Generated reproducible CSV, JSON and HTML evidence outputs, analysed configuration and logging observations, and produced risk-based remediation recommendations aligned to ISO/IEC 27001:2022 security themes.
+This project demonstrates practical Windows security assessment capability across endpoint configuration review, privileged access assessment, event-log analysis, security-control verification, evidence handling and risk-based reporting.
