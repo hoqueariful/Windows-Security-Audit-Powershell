@@ -1,0 +1,452 @@
+﻿[
+    {
+        "Function":  "Test-ASREAccountManagementEvents",
+        "ControlRef":  "Audit collection error",
+        "Status":  "ERROR",
+        "Check":  "Test-ASREAccountManagementEvents",
+        "Severity":  "High",
+        "Evidence":  "No events were found that match the specified selection criteria.",
+        "Recommendation":  "Investigate the collection error before treating the check as complete."
+    },
+    {
+        "Function":  "Test-ASREAdministratorAccount",
+        "ControlRef":  "ISO/IEC 27001:2022-aligned privileged access",
+        "Status":  "WARN",
+        "Check":  "Built-in Administrator account",
+        "Severity":  "Medium",
+        "Evidence":  "Administrator Enabled=True",
+        "Recommendation":  "Prefer named administrative accounts and apply least privilege; disable the built-in account where operationally appropriate."
+    },
+    {
+        "Function":  "Test-ASREAdministratorsGroup",
+        "ControlRef":  "ISO/IEC 27001:2022-aligned access rights management",
+        "Status":  "PASS",
+        "Check":  "Local Administrators membership",
+        "Severity":  "High",
+        "Evidence":  "MemberCount=2; DESKTOP-CGQH04K\\Administrator [User]; DESKTOP-CGQH04K\\LiteOS [User]",
+        "Recommendation":  "Validate every privileged member, remove unnecessary access and prefer role-based named administration."
+    },
+    {
+        "Function":  "Test-ASREAuditPolicy",
+        "ControlRef":  "ISO/IEC 27001:2022-aligned logging and monitoring",
+        "Status":  "PASS",
+        "Check":  "Windows audit policy collection",
+        "Severity":  "High",
+        "Evidence":  "ExitCode=0; EvidenceFile=C:\\Users\\Administrator\\Desktop\\windows-security-audit-powershell-v2\\Evidence\\audit-policy.txt; Preview=System audit policy    Category/Subcategory                      Setting  System    Security System Extension               No Auditing      System Integrity                        Success and Failure      IPsec Driver                            No Auditing      Other System Events                     Success and Failure      Security State Change                   Success    Logon/Logoff    Logon                                   Success and Failure      Logoff                                  Success      Account Lockout                         Success      IPsec Main Mode                         No Auditing      IPsec Quick Mode                        No Auditing      IPsec Extended Mode                     No Auditing      Special Logon                           Success      Other Logon/Logoff Events               No Auditing      Network Policy Server                   Success and Failure      User / Device Claims                    No Auditing      Group Membership               ...",
+        "Recommendation":  "Retain the audit-policy output as evidence and compare required subcategories with the organisation logging baseline."
+    },
+    {
+        "Function":  "Test-ASREAutomaticRunningServices",
+        "ControlRef":  "ISO/IEC 27001:2022-aligned configuration management",
+        "Status":  "INFO",
+        "Check":  "Automatic running services",
+        "Severity":  "Medium",
+        "Evidence":  "Count=43",
+        "Recommendation":  "Review the automatic service inventory for unnecessary or unexpected services."
+    },
+    {
+        "Function":  "Test-ASREBackupOperatorsGroup",
+        "ControlRef":  "ISO/IEC 27001:2022-aligned privileged access",
+        "Status":  "INFO",
+        "Check":  "Backup Operators membership",
+        "Severity":  "Medium",
+        "Evidence":  "MemberCount=0; ",
+        "Recommendation":  "Review membership because backup privileges can enable access to protected data."
+    },
+    {
+        "Function":  "Test-ASREBitLockerStatus",
+        "ControlRef":  "ISO/IEC 27001:2022-aligned cryptographic controls",
+        "Status":  "WARN",
+        "Check":  "BitLocker system-volume status",
+        "Severity":  "High",
+        "Evidence":  "MountPoint=C:; VolumeStatus=FullyDecrypted; ProtectionStatus=Off; EncryptionPercentage=0",
+        "Recommendation":  "Enable and maintain full-disk encryption and key recovery controls for protected endpoints."
+    },
+    {
+        "Function":  "Test-ASRECollectionMetadata",
+        "ControlRef":  "ISO/IEC 27001:2022-aligned documented information",
+        "Status":  "PASS",
+        "Check":  "Collection metadata",
+        "Severity":  "Info",
+        "Evidence":  "CollectionTime=2026-09-12T09:47:12.5016231-07:00; Computer=DESKTOP-CGQH04K; User=Administrator; PowerShell=5.1.19041.2364; OSArchitecture=; Is64Bit=True",
+        "Recommendation":  "Retain collection context so the evidence can be traced to the assessed endpoint and time."
+    },
+    {
+        "Function":  "Test-ASRECriticalServices",
+        "ControlRef":  "ISO/IEC 27001:2022-aligned operational controls",
+        "Status":  "INFO",
+        "Check":  "Critical Windows services",
+        "Severity":  "Medium",
+        "Evidence":  "EventLog=Status:Running;Start:Automatic; WinDefend=NotPresent; wuauserv=Status:Running;Start:Manual; W32Time=Status:Stopped;Start:Disabled",
+        "Recommendation":  "Confirm security-relevant services are running and appropriately configured."
+    },
+    {
+        "Function":  "Test-ASREDefenderScanStatus",
+        "ControlRef":  "Audit collection error",
+        "Status":  "ERROR",
+        "Check":  "Test-ASREDefenderScanStatus",
+        "Severity":  "High",
+        "Evidence":  "The term \u0027Get-MpComputerStatus\u0027 is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.",
+        "Recommendation":  "Investigate the collection error before treating the check as complete."
+    },
+    {
+        "Function":  "Test-ASREDefenderService",
+        "ControlRef":  "Audit collection error",
+        "Status":  "ERROR",
+        "Check":  "Test-ASREDefenderService",
+        "Severity":  "High",
+        "Evidence":  "Cannot find any service with service name \u0027WinDefend\u0027.",
+        "Recommendation":  "Investigate the collection error before treating the check as complete."
+    },
+    {
+        "Function":  "Test-ASREDefenderSignatures",
+        "ControlRef":  "Audit collection error",
+        "Status":  "ERROR",
+        "Check":  "Test-ASREDefenderSignatures",
+        "Severity":  "High",
+        "Evidence":  "The term \u0027Get-MpComputerStatus\u0027 is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.",
+        "Recommendation":  "Investigate the collection error before treating the check as complete."
+    },
+    {
+        "Function":  "Test-ASREDefenderTamperProtection",
+        "ControlRef":  "Audit collection error",
+        "Status":  "ERROR",
+        "Check":  "Test-ASREDefenderTamperProtection",
+        "Severity":  "High",
+        "Evidence":  "The term \u0027Get-MpComputerStatus\u0027 is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.",
+        "Recommendation":  "Investigate the collection error before treating the check as complete."
+    },
+    {
+        "Function":  "Test-ASREDnsServers",
+        "ControlRef":  "ISO/IEC 27001:2022-aligned network security",
+        "Status":  "INFO",
+        "Check":  "Configured DNS servers",
+        "Severity":  "Medium",
+        "Evidence":  "Ethernet:8.8.8.8,1.1.1.1",
+        "Recommendation":  "Validate DNS server addresses against approved enterprise or trusted resolver configuration."
+    },
+    {
+        "Function":  "Test-ASREEvidenceManifest",
+        "ControlRef":  "ISO/IEC 27001:2022-aligned documented information",
+        "Status":  "INFO",
+        "Check":  "Evidence directory manifest",
+        "Severity":  "Info",
+        "Evidence":  "EvidenceFiles=3; .gitkeep=0 bytes; audit-policy.txt=3570 bytes; security-policy.inf=12970 bytes",
+        "Recommendation":  "Keep collected evidence separated from source code and document what each file supports."
+    },
+    {
+        "Function":  "Test-ASREFailedLogons",
+        "ControlRef":  "Audit collection error",
+        "Status":  "ERROR",
+        "Check":  "Test-ASREFailedLogons",
+        "Severity":  "High",
+        "Evidence":  "No events were found that match the specified selection criteria.",
+        "Recommendation":  "Investigate the collection error before treating the check as complete."
+    },
+    {
+        "Function":  "Test-ASREFirewallProfiles",
+        "ControlRef":  "ISO/IEC 27001:2022-aligned network security",
+        "Status":  "WARN",
+        "Check":  "Windows Firewall profiles",
+        "Severity":  "High",
+        "Evidence":  "Domain:Enabled=False;Inbound=NotConfigured;Outbound=NotConfigured; Private:Enabled=False;Inbound=NotConfigured;Outbound=NotConfigured; Public:Enabled=False;Inbound=NotConfigured;Outbound=NotConfigured",
+        "Recommendation":  "Keep active firewall profiles enabled and review default inbound policy."
+    },
+    {
+        "Function":  "Test-ASREGuestAccount",
+        "ControlRef":  "ISO/IEC 27001:2022-aligned access control",
+        "Status":  "PASS",
+        "Check":  "Guest account",
+        "Severity":  "Medium",
+        "Evidence":  "Guest Enabled=False",
+        "Recommendation":  "Disable the built-in Guest account unless an approved business requirement exists."
+    },
+    {
+        "Function":  "Test-ASREInboundAllowRules",
+        "ControlRef":  "ISO/IEC 27001:2022-aligned network security",
+        "Status":  "INFO",
+        "Check":  "Enabled inbound allow rules",
+        "Severity":  "Medium",
+        "Evidence":  "EnabledInboundAllowRuleCount=93",
+        "Recommendation":  "Review enabled inbound exceptions for business necessity and least privilege."
+    },
+    {
+        "Function":  "Test-ASREInstalledUpdates",
+        "ControlRef":  "ISO/IEC 27001:2022-aligned technical vulnerability management",
+        "Status":  "INFO",
+        "Check":  "Installed Windows updates",
+        "Severity":  "Info",
+        "Evidence":  "UpdateCount=5; Latest=KB5014032=01/07/2023 00:00:00; KB5020372=01/07/2023 00:00:00; KB5022282=01/07/2023 00:00:00; KB5020872=01/07/2023 00:00:00; KB5015684=01/07/2023 00:00:00",
+        "Recommendation":  "Review update recency against the organisation patching policy; this check reports inventory rather than declaring compliance."
+    },
+    {
+        "Function":  "Test-ASREInventorySnapshot",
+        "ControlRef":  "ISO/IEC 27001:2022-aligned asset inventory",
+        "Status":  "PASS",
+        "Check":  "Asset inventory snapshot",
+        "Severity":  "Info",
+        "Evidence":  "Manufacturer=innotek GmbH; Model=VirtualBox; BIOS=VirtualBox; OS=Microsoft Windows 10 Home; Build=19045",
+        "Recommendation":  "Store the endpoint inventory snapshot with the assessment timestamp and asset identifier."
+    },
+    {
+        "Function":  "Test-ASREIPConfiguration",
+        "ControlRef":  "ISO/IEC 27001:2022-aligned asset and network evidence",
+        "Status":  "INFO",
+        "Check":  "IP configuration",
+        "Severity":  "Info",
+        "Evidence":  "Ethernet:IPv4=10.0.2.15; Gateway=10.0.2.2",
+        "Recommendation":  "Record network configuration as audit evidence and investigate unexpected interfaces or addresses."
+    },
+    {
+        "Function":  "Test-ASREListeningTcpPorts",
+        "ControlRef":  "ISO/IEC 27001:2022-aligned network security",
+        "Status":  "INFO",
+        "Check":  "Listening TCP ports",
+        "Severity":  "High",
+        "Evidence":  "UniqueListeningPorts=11; Ports=135, 139, 445, 7680, 49664, 49665, 49666, 49667, 49668, 49674, 49675",
+        "Recommendation":  "Review listening services against the approved endpoint baseline and disable unnecessary exposure."
+    },
+    {
+        "Function":  "Test-ASRELocalUsers",
+        "ControlRef":  "ISO/IEC 27001:2022-aligned identity lifecycle",
+        "Status":  "INFO",
+        "Check":  "Local user inventory",
+        "Severity":  "Info",
+        "Evidence":  "EnabledUsers=2; Administrator:Enabled=True; DefaultAccount:Enabled=False; Guest:Enabled=False; LiteOS:Enabled=True; WDAGUtilityAccount:Enabled=False",
+        "Recommendation":  "Review local accounts and remove or disable accounts that are no longer justified."
+    },
+    {
+        "Function":  "Test-ASRELockoutPolicy",
+        "ControlRef":  "ISO/IEC 27001:2022-aligned access control",
+        "Status":  "INFO",
+        "Check":  "Account lockout policy",
+        "Severity":  "Info",
+        "Evidence":  "Lockout threshold:                                    10; Lockout duration (minutes):                           10; Lockout observation window (minutes):                 10",
+        "Recommendation":  "Review lockout settings against the organisation risk appetite and authentication policy."
+    },
+    {
+        "Function":  "Test-ASRENetworkProfiles",
+        "ControlRef":  "ISO/IEC 27001:2022-aligned network security",
+        "Status":  "INFO",
+        "Check":  "Network profile baseline",
+        "Severity":  "Medium",
+        "Evidence":  "Ethernet:Category=Public; IPv4=Internet; IPv6=NoTraffic",
+        "Recommendation":  "Confirm network categorisation is appropriate for trusted and untrusted environments."
+    },
+    {
+        "Function":  "Test-ASREOperatingSystemBaseline",
+        "ControlRef":  "ISO/IEC 27001:2022-aligned configuration management",
+        "Status":  "PASS",
+        "Check":  "Windows operating system baseline",
+        "Severity":  "Medium",
+        "Evidence":  "Caption=Microsoft Windows 10 Home; Version=10.0.19045; Build=19045; Architecture=64-bit",
+        "Recommendation":  "Confirm the endpoint OS and architecture are supported and within the organisation baseline."
+    },
+    {
+        "Function":  "Test-ASREPasswordPolicy",
+        "ControlRef":  "ISO/IEC 27001:2022-aligned authentication information",
+        "Status":  "INFO",
+        "Check":  "Local password policy",
+        "Severity":  "Info",
+        "Evidence":  "Minimum password age (days):                          0; Maximum password age (days):                          42; Minimum password length:                              0; Length of password history maintained:                None",
+        "Recommendation":  "Review the local password and account policy against the organisation baseline; localisation may change command output labels."
+    },
+    {
+        "Function":  "Test-ASREPowerUsersGroup",
+        "ControlRef":  "ISO/IEC 27001:2022-aligned least privilege",
+        "Status":  "INFO",
+        "Check":  "Power Users membership",
+        "Severity":  "Low",
+        "Evidence":  "MemberCount=0; ",
+        "Recommendation":  "Confirm the legacy Power Users group is required and appropriately governed."
+    },
+    {
+        "Function":  "Test-ASREPrivilegedLocalGroups",
+        "ControlRef":  "ISO/IEC 27001:2022-aligned access rights management",
+        "Status":  "INFO",
+        "Check":  "Privileged local group inventory",
+        "Severity":  "Info",
+        "Evidence":  "Administrators=2; Remote Desktop Users=0; Backup Operators=0; Power Users=0; Network Configuration Operators=0",
+        "Recommendation":  "Retain a documented privileged-group review record."
+    },
+    {
+        "Function":  "Test-ASREProcessCreationEvents",
+        "ControlRef":  "ISO/IEC 27001:2022-aligned logging and monitoring",
+        "Status":  "INFO",
+        "Check":  "Process creation auditing, last 7 days",
+        "Severity":  "Medium",
+        "Evidence":  "Event4688Count=55",
+        "Recommendation":  "Confirm process creation auditing is enabled where required and use the data for investigation and detection engineering."
+    },
+    {
+        "Function":  "Test-ASREPublicFirewallProfile",
+        "ControlRef":  "ISO/IEC 27001:2022-aligned network security",
+        "Status":  "WARN",
+        "Check":  "Public firewall profile",
+        "Severity":  "High",
+        "Evidence":  "Enabled=False; DefaultInbound=NotConfigured; DefaultOutbound=NotConfigured",
+        "Recommendation":  "For untrusted networks, maintain firewall protection and a restrictive inbound baseline."
+    },
+    {
+        "Function":  "Test-ASRERemoteDesktopFirewallRules",
+        "ControlRef":  "ISO/IEC 27001:2022-aligned remote access security",
+        "Status":  "INFO",
+        "Check":  "Enabled inbound Remote Desktop rules",
+        "Severity":  "Medium",
+        "Evidence":  "RuleCount=0",
+        "Recommendation":  "Confirm RDP exposure is required, restricted and monitored."
+    },
+    {
+        "Function":  "Test-ASRERemoteDesktopGroup",
+        "ControlRef":  "ISO/IEC 27001:2022-aligned access control",
+        "Status":  "INFO",
+        "Check":  "Remote Desktop Users membership",
+        "Severity":  "Medium",
+        "Evidence":  "MemberCount=0; ",
+        "Recommendation":  "Validate whether each remote-access user has a documented business requirement."
+    },
+    {
+        "Function":  "Test-ASRERemoteRegistryService",
+        "ControlRef":  "ISO/IEC 27001:2022-aligned secure configuration",
+        "Status":  "PASS",
+        "Check":  "Remote Registry service",
+        "Severity":  "Medium",
+        "Evidence":  "Present=True; Status=Stopped;StartType=Disabled",
+        "Recommendation":  "Disable the legacy Remote Registry service where it is not required by an approved operational dependency."
+    },
+    {
+        "Function":  "Test-ASRERTPStatus",
+        "ControlRef":  "Audit collection error",
+        "Status":  "ERROR",
+        "Check":  "Test-ASRERTPStatus",
+        "Severity":  "High",
+        "Evidence":  "The term \u0027Get-MpComputerStatus\u0027 is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.",
+        "Recommendation":  "Investigate the collection error before treating the check as complete."
+    },
+    {
+        "Function":  "Test-ASREScreenLockConfiguration",
+        "ControlRef":  "ISO/IEC 27001:2022-aligned secure configuration",
+        "Status":  "WARN",
+        "Check":  "User screen-lock configuration",
+        "Severity":  "Medium",
+        "Evidence":  "ScreenSaveActive=1; ScreenSaverIsSecure=; TimeoutSeconds=",
+        "Recommendation":  "Apply an enforced inactivity lock baseline appropriate to the organisation and avoid relying solely on per-user settings."
+    },
+    {
+        "Function":  "Test-ASRESecureBoot",
+        "ControlRef":  "ISO/IEC 27001:2022-aligned secure configuration",
+        "Status":  "INFO",
+        "Check":  "Secure Boot",
+        "Severity":  "Info",
+        "Evidence":  "Secure Boot state could not be queried: Cmdlet not supported on this platform: 0xC0000002",
+        "Recommendation":  "Record whether the device uses UEFI/Secure Boot and assess through firmware or hardware-management evidence."
+    },
+    {
+        "Function":  "Test-ASRESecurityLogHealth",
+        "ControlRef":  "ISO/IEC 27001:2022-aligned logging and monitoring",
+        "Status":  "PASS",
+        "Check":  "Security log health",
+        "Severity":  "High",
+        "Evidence":  "Enabled=True; RecordCount=3033; MaxSizeBytes=20971520",
+        "Recommendation":  "Ensure the Security log is enabled, appropriately sized and retained according to policy."
+    },
+    {
+        "Function":  "Test-ASRESecurityPolicyExport",
+        "ControlRef":  "ISO/IEC 27001:2022-aligned documented evidence",
+        "Status":  "PASS",
+        "Check":  "Local security policy export",
+        "Severity":  "High",
+        "Evidence":  "ExitCode=0; EvidenceFile=C:\\Users\\Administrator\\Desktop\\windows-security-audit-powershell-v2\\Evidence\\security-policy.inf; Exists=True",
+        "Recommendation":  "Retain the exported local security-policy evidence inside the audit artefact set and protect it from unauthorised modification."
+    },
+    {
+        "Function":  "Test-ASRESmbClientConfiguration",
+        "ControlRef":  "ISO/IEC 27001:2022-aligned network security",
+        "Status":  "WARN",
+        "Check":  "SMB client security configuration",
+        "Severity":  "High",
+        "Evidence":  "EnableSecuritySignature=True; RequireSecuritySignature=False; EnableInsecureGuestLogons=True",
+        "Recommendation":  "Prefer SMB signing and avoid insecure guest logons where compatible with the environment."
+    },
+    {
+        "Function":  "Test-ASRESmbFirewallRules",
+        "ControlRef":  "ISO/IEC 27001:2022-aligned network security",
+        "Status":  "INFO",
+        "Check":  "Enabled inbound file-sharing rules",
+        "Severity":  "Medium",
+        "Evidence":  "RuleCount=0",
+        "Recommendation":  "Review SMB/file-sharing exposure and limit it to approved network profiles and business needs."
+    },
+    {
+        "Function":  "Test-ASRESMBv1",
+        "ControlRef":  "ISO/IEC 27001:2022-aligned secure configuration",
+        "Status":  "WARN",
+        "Check":  "SMBv1 Windows optional feature",
+        "Severity":  "High",
+        "Evidence":  "State=Enabled",
+        "Recommendation":  "Keep SMBv1 disabled unless an approved legacy dependency exists and compensating controls are documented."
+    },
+    {
+        "Function":  "Test-ASRESuccessfulLogons",
+        "ControlRef":  "ISO/IEC 27001:2022-aligned monitoring",
+        "Status":  "INFO",
+        "Check":  "Successful logon activity, last 7 days",
+        "Severity":  "Info",
+        "Evidence":  "Event4624Count=215; WindowStart=09/05/2026 09:47:40",
+        "Recommendation":  "Use successful-logon volume for baseline and correlation with identity activity."
+    },
+    {
+        "Function":  "Test-ASRESystemIdentity",
+        "ControlRef":  "ISO/IEC 27001:2022-aligned asset and configuration evidence",
+        "Status":  "INFO",
+        "Check":  "System identity",
+        "Severity":  "Info",
+        "Evidence":  "Computer=DESKTOP-CGQH04K; OS=Microsoft Windows 10 Home; Build=19045; Architecture=64-bit; Domain=WORKGROUP",
+        "Recommendation":  "Record the endpoint identity and baseline before assessment."
+    },
+    {
+        "Function":  "Test-ASRESystemUptime",
+        "ControlRef":  "Audit collection error",
+        "Status":  "ERROR",
+        "Check":  "Test-ASRESystemUptime",
+        "Severity":  "High",
+        "Evidence":  "Exception calling \"ToDateTime\" with \"1\" argument(s): \"Specified argument was out of the range of valid values.\r\nParameter name: dmtfDate\"",
+        "Recommendation":  "Investigate the collection error before treating the check as complete."
+    },
+    {
+        "Function":  "Test-ASRETimeConfiguration",
+        "ControlRef":  "ISO/IEC 27001:2022-aligned event logging and monitoring",
+        "Status":  "WARN",
+        "Check":  "Windows Time service",
+        "Severity":  "Low",
+        "Evidence":  "Windows Time service=Stopped",
+        "Recommendation":  "Maintain time synchronisation because reliable timestamps support authentication and event correlation."
+    },
+    {
+        "Function":  "Test-ASREUACConfiguration",
+        "ControlRef":  "ISO/IEC 27001:2022-aligned secure configuration",
+        "Status":  "PASS",
+        "Check":  "User Account Control",
+        "Severity":  "High",
+        "Evidence":  "EnableLUA=1; ConsentPromptBehaviorAdmin=0",
+        "Recommendation":  "Maintain UAC and review administrative elevation behaviour against the endpoint baseline."
+    },
+    {
+        "Function":  "Test-ASREUnquotedServicePaths",
+        "ControlRef":  "ISO/IEC 27001:2022-aligned secure configuration",
+        "Status":  "PASS",
+        "Check":  "Potential unquoted service paths",
+        "Severity":  "Medium",
+        "Evidence":  "CandidateCount=0; ",
+        "Recommendation":  "Review flagged service executable paths and quote paths containing spaces where required by the actual executable structure."
+    },
+    {
+        "Function":  "Test-ASREWinRMService",
+        "ControlRef":  "ISO/IEC 27001:2022-aligned remote administration",
+        "Status":  "PASS",
+        "Check":  "Windows Remote Management service",
+        "Severity":  "Medium",
+        "Evidence":  "Present=True; Status=Stopped;StartType=Manual",
+        "Recommendation":  "Restrict remote administration services to approved administrative workflows and network paths."
+    }
+]

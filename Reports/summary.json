@@ -1,0 +1,17 @@
+﻿{
+    "Assessment":  "Windows Security Audit",
+    "Organisation":  "Al Shad Real Estate (fictional lab)",
+    "Computer":  "DESKTOP-CGQH04K",
+    "OperatingSystem":  "Microsoft Windows 10 Home",
+    "Build":  "19045",
+    "Architecture":  "64-bit",
+    "PowerShell":  "5.1.19041.2364",
+    "Collected":  "2026-09-12T09:47:47.5921312-07:00",
+    "FunctionCount":  50,
+    "ResultCount":  50,
+    "Pass":  12,
+    "Warn":  8,
+    "Fail":  0,
+    "Info":  22,
+    "Error":  8
+}
