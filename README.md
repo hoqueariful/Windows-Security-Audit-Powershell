@@ -1,6 +1,6 @@
 # Windows Security Audit PowerShell Module
 
-**Al Shad Real Estate - fictional laboratory case study | 2-day project**
+**Al Shad Real Estate - laboratory case study **
 
 > A read-only Windows endpoint security audit toolkit built with native PowerShell 5.1. It collects security evidence, identifies configuration gaps, and produces reproducible audit outputs for security assurance workflows.
 
