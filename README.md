@@ -4,7 +4,6 @@
 
 > A read-only Windows endpoint security audit toolkit built with native PowerShell 5.1. It collects security evidence, identifies configuration gaps, and produces reproducible audit outputs for security assurance workflows.
 
-## 30-second recruiter view
 
 **50 security checks | 10 PowerShell modules | Windows 10 22H2 x64 | PowerShell 5.1**
 
