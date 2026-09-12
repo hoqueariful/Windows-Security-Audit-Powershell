@@ -1,0 +1,5 @@
+Windows Security Audit PowerShell Module | PowerShell, Windows Security, RBAC, Event Log Analysis, ISO/IEC 27001:2022-aligned Evidence Mapping
+
+Al Shad Real Estate — Fictional Lab Case Study | 2-day project
+
+Built and validated a modular 50-function, 10-module PowerShell toolkit for Windows endpoint security assessment, covering privileged-group review, Security event-log analysis, Microsoft Defender, Windows Firewall, network exposure, services and endpoint hardening. Generated reproducible CSV, JSON and HTML audit outputs and translated observed evidence into risk-based findings and remediation recommendations aligned to ISO/IEC 27001:2022 security themes.
